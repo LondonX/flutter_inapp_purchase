@@ -255,22 +255,20 @@ enum PaymentModeIOS {
   final String value;
 
   factory PaymentModeIOS.fromJson(String value) {
-    switch (value) {
+    switch (value.toLowerCase()) {
       case 'empty':
-      case 'EMPTY':
-      case 'Empty':
         return PaymentModeIOS.Empty;
       case 'free-trial':
-      case 'FREE_TRIAL':
-      case 'FreeTrial':
+      case 'free_trial':
+      case 'freetrial':
         return PaymentModeIOS.FreeTrial;
       case 'pay-as-you-go':
-      case 'PAY_AS_YOU_GO':
-      case 'PayAsYouGo':
+      case 'pay_as_you_go':
+      case 'payasyougo':
         return PaymentModeIOS.PayAsYouGo;
       case 'pay-up-front':
-      case 'PAY_UP_FRONT':
-      case 'PayUpFront':
+      case 'pay_up_front':
+      case 'payupfront':
         return PaymentModeIOS.PayUpFront;
     }
     throw ArgumentError('Unknown PaymentModeIOS value: $value');
