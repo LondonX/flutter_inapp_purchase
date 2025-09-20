@@ -645,8 +645,8 @@ class DiscountIOS {
   final String? localizedPrice;
   final int numberOfPeriods;
   final PaymentModeIOS paymentMode;
-  final String price;
-  final double priceAmount;
+  final double price;
+  final double? priceAmount;
   final String subscriptionPeriod;
   final String type;
 
@@ -656,8 +656,8 @@ class DiscountIOS {
       localizedPrice: json['localizedPrice'] as String?,
       numberOfPeriods: json['numberOfPeriods'] as int,
       paymentMode: PaymentModeIOS.fromJson(json['paymentMode'] as String),
-      price: json['price'] as String,
-      priceAmount: (json['priceAmount'] as num).toDouble(),
+      price: (json['price'] as num).toDouble(),
+      priceAmount: (json['priceAmount'] as num?)?.toDouble(),
       subscriptionPeriod: json['subscriptionPeriod'] as String,
       type: json['type'] as String,
     );

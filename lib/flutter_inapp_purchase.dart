@@ -1213,10 +1213,11 @@ class FlutterInappPurchase with RequestPurchaseBuilderApi {
                 fallbackIsIOS: _platform.isIOS,
               );
               products.add(parsed);
-            } catch (error) {
+            } catch (error, stack) {
               debugPrint(
                 '[flutter_inapp_purchase] Skipping product due to parse error: $error',
               );
+              debugPrintStack(stackTrace: stack);
             }
           }
 
